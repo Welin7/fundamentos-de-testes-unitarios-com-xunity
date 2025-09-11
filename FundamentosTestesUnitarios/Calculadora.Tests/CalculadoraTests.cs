@@ -25,7 +25,7 @@
         [InlineData(-20, 30, 10)]
         [InlineData(100, -200, -100)]
         [InlineData(-50, -70, -120)]
-        public void SomarMuitosNumerosPositivosDeveRetornarSomaExata(decimal numeroUm, decimal numeroDois, decimal resultadoDaSomaEsperado)
+        public void SomarMuitosNumerosPositivosReaisOuNumerosNegativosReaisDeveRetornarSomaExata(decimal numeroUm, decimal numeroDois, decimal resultadoDaSomaEsperado)
         {
             //Arrange
             var calculadora = new Calculadora();
