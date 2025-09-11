@@ -3,7 +3,7 @@
     public class CalculadoraTests
     {
         [Fact(DisplayName ="Somar_Numeros_Positivos_Soma_Exata")]
-        public void Somar_Numeros_Positivos_Deve_Retornar_Soma_Exata()
+        public void SomarNumerosPositivosDeveRetornarSoma_Exata()
         {
             //Arrange
             var calculadora = new Calculadora();
@@ -20,12 +20,12 @@
         }
 
         [Theory]
-        [InlineData(8, 4, 12)]
-        [InlineData(15, 5, 20)]
-        [InlineData(20, 30, 50)]
-        [InlineData(100, 200, 300)]
-        [InlineData(50, 60, 110)]
-        public void SomarMuitosNumerosPositivosDeveRetornarSomaExata(int numeroUm, int numeroDois, int resultadoDaSomaEsperado)
+        [InlineData(9, 4, 13)]
+        [InlineData(-15.2, -5, -20.2)]
+        [InlineData(-20, 30, 10)]
+        [InlineData(100, -200, -100)]
+        [InlineData(-50, -70, -120)]
+        public void SomarMuitosNumerosPositivosDeveRetornarSomaExata(decimal numeroUm, decimal numeroDois, decimal resultadoDaSomaEsperado)
         {
             //Arrange
             var calculadora = new Calculadora();
