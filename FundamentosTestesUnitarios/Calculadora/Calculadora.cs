@@ -2,7 +2,7 @@
 {
     public class Calculadora
     {
-        public int Somar(int numeroUm, int numeroDois)
+        public decimal Somar(decimal numeroUm, decimal numeroDois)
         {
             return numeroUm + numeroDois;
         }
