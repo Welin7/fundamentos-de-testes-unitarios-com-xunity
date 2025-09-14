@@ -87,5 +87,37 @@
             //Assert
             Assert.Equal(resultadoDaMultiplicacaoEsperada, resultadoDaMultiplicacao);
         }
+
+        [Fact(DisplayName = "DividirQualquerNumeroPositivoOuNegativoRealPorZeroDeveRetornarMensagemDeExcecao")]
+        public void DividirQualquerNumeroPositivoOuNegativoRealPorZeroDeveRetornarMensagemDeExcecao()
+        {
+            //Arrange
+            var calculadora = new Calculadora();
+            decimal numeroUm = -4.5m;
+            decimal numeroDois = 0.00m;
+
+            //Act
+            var excecao = Assert.Throws<DivideByZeroException>(() =>
+            calculadora.Dividir(numeroUm, numeroDois));
+
+            //Assert
+            Assert.Equal("Não é possível realizar divizão por zero", excecao.Message);
+        }
+
+        [Theory]
+        [InlineData(5.5, 2.3, 2.39)]
+        [InlineData(-3.2, -2.6, 1.23)]
+        [InlineData(1.8, 4.3, 0.42)]
+        public void DividirNumerosReaisPositivosOuReaisNegativosDeveRetornarDivisaoExata(decimal numeroUm, decimal numeroDois, decimal resultadoDaDivisaoEsperada)
+        {
+            //Arrange
+            var calculadora = new Calculadora();
+
+            //Act
+            var resultadoDaDivisao = calculadora.Dividir(numeroUm, numeroDois);
+
+            //Assert
+            Assert.Equal(resultadoDaDivisaoEsperada, resultadoDaDivisao, precision: 2);
+        }
     }
 }
