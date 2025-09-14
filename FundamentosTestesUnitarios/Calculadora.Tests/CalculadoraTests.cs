@@ -12,10 +12,10 @@
             int resultadoDaSomaEsperado = 12;
             
             //Act
-            var resultaDaSoma = calculadora.Somar(numeroUm, numeroDois);
+            var resultadoDaSoma = calculadora.Somar(numeroUm, numeroDois);
             
             //Assert
-            Assert.Equal(resultadoDaSomaEsperado, resultaDaSoma);
+            Assert.Equal(resultadoDaSomaEsperado, resultadoDaSoma);
 
         }
 
@@ -31,10 +31,10 @@
             var calculadora = new Calculadora();
             
             //Act
-            var resultaDaSoma = calculadora.Somar(numeroUm, numeroDois);
+            var resultadoDaSoma = calculadora.Somar(numeroUm, numeroDois);
 
             //Assert
-            Assert.Equal(resultadoDaSomaEsperado, resultaDaSoma);
+            Assert.Equal(resultadoDaSomaEsperado, resultadoDaSoma);
         }
 
         [Theory]
@@ -48,10 +48,10 @@
             var calculadora = new Calculadora();
             
             //Act
-            var resultaDaSubtracao = calculadora.Subtrair(numeroUm, numeroDois);
+            var resultadoDaSubtracao = calculadora.Subtrair(numeroUm, numeroDois);
 
             //Assert
-            Assert.Equal(resultadoDaSubtracaoEsperada, resultaDaSubtracao);
+            Assert.Equal(resultadoDaSubtracaoEsperada, resultadoDaSubtracao);
         }
 
         [Theory]
@@ -65,10 +65,27 @@
             var calculadora = new Calculadora();
 
             //Act
-            var resultaDaSubtracao = calculadora.Subtrair(numeroUm, numeroDois);
+            var resultadoDaSubtracao = calculadora.Subtrair(numeroUm, numeroDois);
 
             //Assert
-            Assert.Equal(resultadoDaSubtracaoEsperada, resultaDaSubtracao);
+            Assert.Equal(resultadoDaSubtracaoEsperada, resultadoDaSubtracao);
+        }
+
+        [Theory]
+        [InlineData(2.5, 2.7, 6.75)]
+        [InlineData(-3.2, -2.6, 8.32)]
+        [InlineData(1.8, 4.3, 7.74)]
+        [InlineData(-0.0, 0.0, 0.0)]
+        public void MultiplicarNumerosReaisNegativosOuReaisPositivosDeveRetornarMultiplicacaoExata(decimal numeroUm, decimal numeroDois, decimal resultadoDaMultiplicacaoEsperada)
+        {
+            //Arrange
+            var calculadora = new Calculadora();
+
+            //Act
+            var resultadoDaMultiplicacao = calculadora.Multiplicar(numeroUm, numeroDois);
+
+            //Assert
+            Assert.Equal(resultadoDaMultiplicacaoEsperada, resultadoDaMultiplicacao);
         }
     }
 }
